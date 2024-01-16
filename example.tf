@@ -11,6 +11,14 @@ terraform {
       version = "=3.0.0"
     }
   }
+
+    backend "azurerm" {
+      resource_group_name = "MyPersonal1"
+      storage_account_name = "terraformstate2024911"
+      container_name = "tfstatefiles"
+      key = "terraform.tfstate"
+    }
+
 }
 
 # Configure the Microsoft Azure Provider
@@ -24,3 +32,4 @@ resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "eastus2"
 }
+
