@@ -10,6 +10,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "=3.0.0"
     }
+     random = {
+      source = "hashicorp/random"
+      version = "3.6.0"
+    }
   }
 
     backend "azurerm" {
@@ -18,6 +22,7 @@ terraform {
       container_name = "tfstatefiles"
       key = "terraform.tfstate"
     }
+
 
 }
 
@@ -35,4 +40,6 @@ provider "azurerm" {
   }
   alias = "provider2-westus"
 }
+
+
 

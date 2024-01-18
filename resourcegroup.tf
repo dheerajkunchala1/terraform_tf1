@@ -9,3 +9,9 @@ resource "azurerm_resource_group" "example2" {
   location = "westus"
   provider = azurerm.provider2-westus
 }
+
+resource "random_string" "myrandom" {
+  length  = 16
+  special = false
+  upper = false
+}
